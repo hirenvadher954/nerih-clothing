@@ -14,7 +14,7 @@ export const UserProvider = ({ children }) => {
     useEffect(() => {
         return onAuthStateChangedListener((user) => {
             if (user) {
-                createUserDocumentFromAuth(user);
+                createUserDocumentFromAuth(user).then(r => console.log(r));
             }
             setCurrentUser(user);
         });
