@@ -7,6 +7,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {UserProvider} from "./contexts/user.context";
 import {ProductsProvider} from "./contexts/products.context";
+import {CartProvider} from "./contexts/cart.context";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,12 +15,15 @@ root.render(
         <BrowserRouter>
             <UserProvider>
                 <ProductsProvider>
+                    <CartProvider>
                     <App/>
-                </ProductsProvider>
-            </UserProvider>
-        </BrowserRouter>
-    </React.StrictMode>
-);
+                </CartProvider>
+            </ProductsProvider>
+        </UserProvider>
+    </BrowserRouter>
+</React.StrictMode>
+)
+;
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
